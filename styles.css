@@ -1,0 +1,249 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --btn-bg: hsl(0, 100%, 68%);
+  --slogan: hsl(230, 29%, 20%);
+  --span-bg: hsl(230, 29%, 20%);
+  --color: hsl(230, 11%, 40%);
+  --text: hsl(231, 7%, 65%);
+  --bg: hsl(207, 33%, 95%);
+  --span-text: hsl(207, 33%, 95%);
+  --decor: hsl(207, 33%, 95%);
+}
+
+body {
+  width: 100%;
+  background-color: white;
+  color: var(--text);
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  position: relative;
+}
+
+body::after {
+  content: "";
+  overflow: hidden;
+  background-color: var(--decor);
+  position: absolute;
+  top: -1em;
+  right: 0;
+  width: 50%;
+  height: 57%;
+  border-bottom-left-radius: 50px;
+  z-index: -1;
+}
+
+.logo {
+  padding: 2em;
+}
+
+.menu-icon {
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+  margin: 0 1.5em;
+}
+
+.close-icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  margin: 0 1.5em;
+  display: none;
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.dot {
+  display: none;
+}
+
+.navbar-list {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1em 0;
+  position: absolute;
+  top: 60%;
+  left: 10%;
+  width: 80%;
+  background-color: white;
+  box-shadow: 1px 1px 10px var(--text);
+}
+
+.nav li {
+  list-style: none;
+}
+
+.nav li a {
+  text-decoration: none;
+  padding: 1em;
+  display: block;
+  text-transform: uppercase;
+  color: var(--slogan);
+  font-family: "Barlow", sans-serif;
+  font-weight: 700;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.line {
+  width: 80%;
+  border-bottom: 1px solid var(--span-text);
+  margin: 1em auto;
+}
+
+.nav .login,
+.nav .dot {
+  color: var(--text);
+}
+
+.nav li a:hover {
+  text-decoration: underline;
+}
+
+.navbar-list.active {
+  display: flex;
+}
+
+.image-div {
+  overflow: hidden;
+  width: 100%;
+}
+
+.primary-img {
+  width: clamp(400px, 600px, 1400px);
+}
+
+.content {
+  width: 100%;
+  padding: 2em;
+}
+
+.title {
+  margin-top: 2em;
+  color: var(--text);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.title > span {
+  background-color: var(--span-bg);
+  color: var(--span-text);
+  padding: 5px 20px;
+  border-radius: 20px;
+  font-weight: 700;
+  margin-right: 1em;
+  font-size: 1em;
+}
+
+.slogan {
+  font-size: 2em;
+  color: var(--slogan);
+  text-transform: uppercase;
+}
+
+.paragraph {
+  color: var(--text);
+  margin-top: -0.5em;
+  font-size: 1em;
+  font-weight: 400;
+  font-family: "Barlow", sans-serif;
+}
+
+.btn {
+  margin-top: 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-color: var(--btn-bg);
+  color: var(--bg);
+  font-size: 0.7em;
+  border: none;
+  padding: 1em 1.5em;
+  border-radius: 5px;
+  margin-right: 0.5em;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+.preview {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.8em;
+}
+
+footer {
+  margin-top: 3em;
+  font-size: 0.8em;
+  text-align: center;
+  color: var(--text);
+}
+
+footer a {
+  color: var(--text);
+}
+
+@media (min-width: 700px) {
+  body {
+    padding: 0;
+    font-size: 20px;
+  }
+
+  main {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu-icon,
+  .close-icon {
+    display: none !important;
+  }
+
+  .nav {
+    padding: 1em;
+  }
+
+  .navbar-list {
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    padding-left: 5em;
+    box-shadow: none;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .navbar-list .dot {
+    display: list-item;
+    list-style: disc;
+    margin-left: 1em;
+  }
+
+  .line {
+    display: none;
+  }
+
+  .content {
+    margin-left: 2em;
+  }
+}
